@@ -1,11 +1,11 @@
 let password = require("../src/password_checker");
 
-describe("Password is okay", function() {
-  it("returns true if password is okay", function() {
-    expect(password.password_is_ok("Bell@210")).toBe(true);
+describe("Password is ok", function() {
+  it("returns true if password is ok", function() {
+    expect(password.passwordIsOk("Bell")).toBe(false);
   });
 
-  it("returns false if password is not okay", function() {
-    expect(password.password_is_ok("Bell@hfghj")).toBe(false);
+  it("returns false if password is not ok", function() {
+    expect(password.passwordIsOk("Bell@2")).toBe(false);
   });
 });

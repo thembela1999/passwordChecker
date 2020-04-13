@@ -11,7 +11,6 @@ function passwordIsValid(password) {
       throw $("password should have at least one special character");
     if (password.match(/[0-9]/g) == null)
       throw "password should at least have one digit";
-
     return `password is valid`;
   } catch (error) {
     console.error(`Invalid password: ${error}`);
@@ -21,7 +20,7 @@ function passwordIsValid(password) {
 
 console.log(passwordIsValid("Bell@210"));
 
-function password_is_ok(password) {
+function passwordIsOk(password) {
   const conditions = [/'0-9'/, /'A-Z'/, /'a-z'/, /'!@#$%*().'/];
   if (password == "" && password.length < 8) {
     return false;
@@ -34,9 +33,9 @@ function password_is_ok(password) {
     }
   }
 }
-console.log(password_is_ok("Bell@210"));
+console.log(passwordIsOk("passwordIsOk"));
 
 module.exports = {
   passwordIsValid,
-  password_is_ok
+  passwordIsOk
 };
