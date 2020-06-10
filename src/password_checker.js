@@ -7,22 +7,18 @@ function passwordIsValid(password) {
             throw "password should have at least one lowercase letter";
         if (password.match(/[A-Z]/g) == null)
             throw "password should have at least one uppercase letter";
-        if (password.match(/[$&+,:;=?@#|'<>.^*()%!-]/g) == null)
-
-            throw $("password should have at least one special character");
+        if (password.match(/[@,#,!,$,%,$,&,*]/) == null)
+            throw ('password should have special characters');
         if (password.match(/[0-9]/g) == null)
-
             throw "password should at least have one digit";
 
-
-        return `password is valid`;
     } catch (error) {
-        console.error(`Invalid password: ${error}`);
+        console.log(error);
     }
-    return passwordIsValid;
+    return "password is valid";
 }
 
-console.log(passwordIsValid("Bell@210"));
+console.log(passwordIsValid("password"));
 
 function passwordIsOk(password) {
     const condition = [/[0-9]/, /[A-Z]/, /[a-z]/, /"!@#$%*()."/];
